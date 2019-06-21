@@ -19,6 +19,10 @@ target_link_libraries(ctb-info ${TOOL_TARGETS})
 add_executable(ctb-extents ctb-extents.cpp)
 target_link_libraries(ctb-extents ${TOOL_TARGETS})
 
+# Add the `cbt-single` executable
+add_executable(ctb-single ctb-single.cpp)
+target_link_libraries(ctb-single ${TOOL_TARGETS})
+
 # Install the tools
 set(TOOLS ctb-tile ctb-export ctb-info ctb-extents)
 install(TARGETS ${TOOLS} DESTINATION bin)
