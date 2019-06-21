@@ -132,6 +132,16 @@ Terrain::readFile(const char *fileName) {
 }
 
 /**
+ * @details This writes raw uncompressed terrain data to a output stream.
+ */
+void
+Terrain::writeFile(std::ostream& ostr) const {
+  ostr.write((const char*)(mHeights.data()), TILE_CELL_SIZE * 2);
+  ostr.write((const char*)(&mChildren), 1);
+  ostr.write((const char*)(mMask), mMaskLength);
+}
+
+/**
  * @details This writes raw uncompressed terrain data to a filehandle.
  */
 void

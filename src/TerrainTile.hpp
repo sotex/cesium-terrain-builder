@@ -23,6 +23,7 @@
  */
 
 #include <vector>
+#include <iostream>
 
 #include "gdal_priv.h"
 
@@ -56,6 +57,10 @@ public:
   /// Read terrain data from the filesystem
   void
   readFile(const char *fileName);
+
+  /// Write terrain data to a ostream
+  void
+  writeFile(std::ostream& ostr) const;
 
   /// Write terrain data to a file handle
   void
